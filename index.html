@@ -3,33 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LESZEK | Lelki és szellemi központ Székesfehérváron</title>
-    <meta name="description" content="A LESZEK biztonságos, elfogadó közösségi tér érzelmi fejlődéshez, önismerethez, tudatos kapcsolódáshoz és teremfoglaláshoz." />
-    <meta name="keywords" content="LESZEK, lelki központ, önismeret, érzelmi intelligencia, terem bérlés, wellbeing központ, coaching terem" />
+    <title>LESZEK Központ Székesfehérváron | Önismeret, érzelmi intelligencia, családi támogatás</title>
+    <meta name="description" content="A LESZEK Központ Székesfehérváron önismereti, érzelmi intelligenciát fejlesztő és családtámogató foglalkozásoknak ad teret gyerekeknek, szülőknek és felnőtteknek." />
+    <meta property="og:title" content="LESZEK Központ Székesfehérváron" />
+    <meta property="og:description" content="Nyugodt, elfogadó tér önismerethez, érzelmi fejlődéshez, családi támogatáshoz és tudatos kapcsolódáshoz." />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
-    <meta property="og:title" content="LESZEK | Ahová megérkezhetsz" />
-    <meta property="og:description" content="Közösségi tér önismerethez, érzelmi intelligenciához és megtartó kapcsolódásokhoz." />
-    <meta property="og:image" content="/assets/images/hero-wellbeing.png" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "LESZEK Központ",
-        "description": "Lelki és szellemi központ önismereti, érzelmi intelligencia és közösségi folyamatokhoz, foglalható terekkel.",
-        "url": "https://leszekkozpont.hu",
-        "email": "leszekkozpont@gmail.com",
-        "telephone": "+36 20 399 1937",
-        "areaServed": "Székesfehérvár",
-        "priceRange": "1890 Ft - 10000 Ft",
-        "sameAs": []
-      }
-    </script>
-      <link rel="icon" type="image/webp" href="/favicon.webp" />
+  <link rel="stylesheet" href="local-preview.css?v=20260720-mobile-order1" />
+      <link rel="icon" type="image/webp" href="public/favicon.webp" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="site-header">
+      <a class="brand" href="local-preview.html" aria-label="LESZEK kezdőlap">
+        <img src="public/assets/brand/logo-title-light.png" alt="LESZEK logó" />
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="local-preview.html" aria-current="page">Kezdőlap</a>
+        <a href="local-preview-rolunk.html">Rólunk</a>
+        <a href="local-preview-terek.html">Tereink</a>
+        <a href="local-preview-foglalas.html">Foglalás</a>
+        <a href="local-preview-kapcsolat.html">Kapcsolat</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img class="hero-bg" src="public/assets/images/hero-wellbeing.png" alt="Napfényes mező, nyugodt wellbeing hangulat" />
+        <div class="hero-shade"></div>
+        <div class="hero-content reveal is-visible">
+          <h1>LESZEK<span class="sr-only"> Központ Székesfehérváron</span></h1>
+          <p class="hero-lead">Egy nyugodt, elfogadó tér az önismerethez, az érzelmi intelligencia fejlesztéséhez és a biztonságosabb kapcsolódáshoz.</p>
+          <a class="button primary" href="local-preview-foglalas.html">Időpontot foglalok</a>
+        </div>
+      </section>
+
+      <section class="intro split-section">
+        <div class="section-copy reveal is-visible">
+          <p class="script-word">Megérkezés</p>
+          <h2>A belső egyensúly kapcsolódásból születik</h2>
+          <div class="mobile-heading-image image-panel">
+            <img src="public/assets/images/consultation.webp" alt="Személyes konzultáció nyugodt, figyelmes légkörben" />
+          </div>
+          <p>A LESZEK Központban az önismeret, az érzelmi intelligencia és a tudatos kapcsolódás kap teret. Székesfehérvár kertvárosában olyan nyugodt, elfogadó helyszínt biztosítunk szakembereknek, ahol gyerekeknek, szülőknek, családoknak és felnőtteknek szóló egyéni vagy csoportos folyamatokat vezethetnek.</p>
+          <p>Nálunk a fejlődés nem elvárás, hanem lehetőség arra, hogy jobban megértsük önmagunkat, a kapcsolatainkat és azt, ami bennünk történik.</p>
+          <a class="button secondary" href="local-preview-rolunk.html">Ismerd meg a LESZEK-et</a>
+        </div>
+        <div class="image-panel reveal is-visible">
+          <img src="public/assets/images/consultation.webp" alt="Személyes konzultáció nyugodt, figyelmes légkörben" />
+        </div>
+      </section>
+
+      <section class="benefits band band-green">
+        <div class="section-head reveal is-visible">
+          <p class="eyebrow">Miben fejlődhetsz nálunk?</p>
+          <h2>Önismeret, stabilitás, kapcsolódás</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal is-visible">
+            <span aria-hidden="true"></span>
+            <h3>Lelki stabilitás</h3>
+            <p>Az érzelmek felismerése, elfogadása és tudatos megélése segít oldani a belső feszültségeket, és támogatja a kiegyensúlyozottabb működést. A LESZEK-ben ennek adunk teret.</p>
+          </article>
+          <article class="benefit-card reveal is-visible">
+            <span aria-hidden="true"></span>
+            <h3>Tudatos kapcsolódás</h3>
+            <p>Az önismeret segít, hogy ne mások véleménye határozza meg, kik vagyunk. Így tudatosabban reagálhatunk, és kiegyensúlyozottabban kapcsolódhatunk másokhoz.</p>
+          </article>
+          <article class="benefit-card reveal is-visible">
+            <span aria-hidden="true"></span>
+            <h3>Érzelmi kompetencia</h3>
+            <p>Az érzelmek felismerése és szabályozása tanulható. Ez segít megállni az automatikus reakciók előtt, és tudatosabban, saját értékeink szerint dönteni.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="spaces-preview split-section reverse">
+        <div class="section-copy reveal is-visible">
+          <p class="script-word">Tereink</p>
+          <h2>Terek konzultációkhoz, foglalkozásokhoz és&nbsp;workshopokhoz</h2>
+          <div class="mobile-heading-image image-panel">
+            <img src="public/assets/images/spaces-overview.jpg" alt="A LESZEK Központ egyik közösségi tere" />
+          </div>
+          <p>A LESZEK hat foglalkoztató tere és sószobája különböző létszámú és hangulatú alkalmakhoz igazodik. Egyéni konzultációkhoz, páros folyamatokhoz, csoportos foglalkozásokhoz, workshopokhoz és önismereti programokhoz is nyugodt, igényes környezetet biztosítunk.</p>
+          <p>Számos egyéni igényt figyelembevéve, olyan tereket hoztunk létre, amelyek hangulata és művészi környezete elősegíti a belső folyamatainkkal való könnyebb kapcsolódást, és hatékonyabb munkát.</p>
+          <a class="button primary" href="local-preview-terek.html">Megnézem a tereket</a>
+        </div>
+        <div class="image-panel reveal is-visible">
+          <img src="public/assets/images/spaces-overview.jpg" alt="A LESZEK Központ egyik közösségi tere" />
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-inner reveal is-visible">
+          <div class="cta-copy">
+            <p class="eyebrow">Térhasználat</p>
+            <h2>Válassz időpontot és foglalj teret</h2>
+            <div class="mobile-heading-image image-panel">
+              <img src="public/assets/images/booking-clock.webp" alt="Óra, az időpontfoglalás jelképe" />
+            </div>
+            <p>Nézd meg a tereinket és találd meg melyik áll Hozzád közel és melyik kapcsolódik leginkább a foglalkozásaidhoz!</p>
+            <p>Foglalási rendszerünk segítségével könnyedén kiválaszthatod a számodra megfelelő teret és időpontot.</p>
+            <a class="button secondary light" href="local-preview-foglalas.html">Foglalás</a>
+          </div>
+          <div class="cta-image image-panel">
+            <img src="public/assets/images/booking-clock.webp" alt="Óra, az időpontfoglalás jelképe" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-legal" aria-label="Jogi információk">
+        <a href="local-preview-adatvedelem.html">Adatvédelmi tájékoztató</a>
+        <a href="local-preview-impresszum.html">Impresszum</a>
+      </nav>
+      <a class="footer-logo-link" href="local-preview.html" aria-label="LESZEK kezdőlap"><img class="footer-logo" src="public/assets/brand/logo-title-light.png" alt="LESZEK" /></a>
+      <div class="footer-social" aria-label="LESZEK közösségi média">
+        <a href="https://www.facebook.com/leszek.kozpont" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4h-4V7a1 1 0 0 1 1-1h3V2z"></path></svg></a>
+        <a href="https://www.instagram.com/leszek_kozpont/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A3.8 3.8 0 1 0 12 15.8 3.8 3.8 0 0 0 12 8.2zm5.1-2.1a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"></path></svg></a>
+        <a href="https://www.tiktok.com/@leszek_kozpont" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2h3c.2 1.7 1.1 3.1 2.5 4.1A7 7 0 0 0 22 7v3.2a8.7 8.7 0 0 1-4.7-1.4v6.6A6.6 6.6 0 1 1 10.7 9v3.3a3.3 3.3 0 1 0 3.3 3.3V2z"></path></svg></a>
+      </div>
+      <p class="footer-credit">© 2026 · Made by <a href="https://csitaryoffice.hu" target="_blank" rel="noopener">Csitáry Office</a></p>
+    </footer>
+    <script type="module" src="local-preview.js?v=20260719-site1"></script>
   </body>
 </html>
