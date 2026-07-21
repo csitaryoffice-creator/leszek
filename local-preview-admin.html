@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Foglalási adminisztráció | LESZEK Központ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="local-preview.css?v=20260720-admin1" />
+      <link rel="icon" type="image/webp" href="public/favicon.webp" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-login" id="admin-login" aria-labelledby="admin-login-title">
+        <a class="admin-login-logo" href="local-preview.html" aria-label="LESZEK kezdőlap">
+          <img src="public/assets/brand/logo-title-green.png" alt="LESZEK" />
+        </a>
+        <div class="admin-login-copy">
+          <p class="script-word">Adminisztráció</p>
+          <h1 id="admin-login-title">Foglalások kezelése</h1>
+          <p>Jelentkezz be a LESZEK Központ belső foglalási felületére.</p>
+        </div>
+        <form class="admin-login-form" id="admin-login-form" novalidate>
+          <label for="admin-username">Felhasználónév</label>
+          <input id="admin-username" name="username" type="text" autocomplete="username" required />
+          <label for="admin-password">Jelszó</label>
+          <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+          <p class="admin-form-error" id="admin-login-error" role="alert"></p>
+          <button class="button primary" type="submit">Belépés</button>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" id="admin-dashboard" aria-labelledby="admin-title" hidden>
+        <header class="admin-topbar">
+          <a class="admin-brand" href="local-preview.html" aria-label="LESZEK kezdőlap">
+            <img src="public/assets/brand/logo-title-green.png" alt="LESZEK" />
+          </a>
+          <div>
+            <p class="admin-eyebrow">Foglalási rendszer</p>
+            <h1 id="admin-title">Adminisztráció</h1>
+          </div>
+          <button class="admin-icon-button" id="admin-logout" type="button" title="Kijelentkezés" aria-label="Kijelentkezés">
+            <span aria-hidden="true">↗</span>
+          </button>
+        </header>
+
+        <section class="admin-stats" aria-label="Foglalási összesítő">
+          <article><span>Összes foglalás</span><strong id="stat-all">0</strong></article>
+          <article><span>Új igény</span><strong id="stat-pending">0</strong></article>
+          <article><span>Visszaigazolt</span><strong id="stat-confirmed">0</strong></article>
+          <article><span>Mai foglalás</span><strong id="stat-today">0</strong></article>
+        </section>
+
+        <section class="admin-workspace" aria-labelledby="booking-list-title">
+          <div class="admin-section-heading">
+            <div>
+              <p class="script-word">Áttekintés</p>
+              <h2 id="booking-list-title">Foglalások</h2>
+            </div>
+            <button class="button primary" id="admin-new-booking" type="button">Új foglalás</button>
+          </div>
+
+          <div class="admin-toolbar" aria-label="Foglalások szűrése">
+            <label class="admin-search" for="admin-search">Keresés
+              <input id="admin-search" type="search" placeholder="Név, terem, e-mail vagy azonosító" />
+            </label>
+            <label for="admin-status-filter">Státusz
+              <select id="admin-status-filter">
+                <option value="all">Mindegyik</option>
+                <option value="pending">Új igény</option>
+                <option value="confirmed">Visszaigazolt</option>
+                <option value="completed">Teljesült</option>
+                <option value="cancelled">Lemondott</option>
+              </select>
+            </label>
+            <label for="admin-date-filter">Dátum
+              <input id="admin-date-filter" type="date" />
+            </label>
+            <button class="button secondary" id="admin-export" type="button">CSV-export</button>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Időpont</th><th>Terem</th><th>Kapcsolattartó</th><th>Létszám</th><th>Összeg</th><th>Státusz</th><th>Műveletek</th></tr></thead>
+              <tbody id="admin-booking-rows"></tbody>
+            </table>
+            <div class="admin-empty" id="admin-empty" hidden>
+              <h3>Nincs megjeleníthető foglalás</h3>
+              <p>A szűrők módosításával vagy új foglalás rögzítésével folytathatod.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <dialog class="admin-dialog" id="booking-dialog" aria-labelledby="booking-dialog-title">
+      <form id="admin-booking-form" method="dialog" novalidate>
+        <div class="admin-dialog-header">
+          <div><p class="admin-eyebrow">Foglalási adatlap</p><h2 id="booking-dialog-title">Új foglalás</h2></div>
+          <button class="admin-icon-button" id="admin-dialog-close" type="button" aria-label="Ablak bezárása">×</button>
+        </div>
+        <input id="admin-booking-id" type="hidden" />
+        <div class="admin-form-grid">
+          <label for="admin-room">Terem<select id="admin-room" required><option>MAG</option><option>SZIGET</option><option>Sószoba</option><option>FÓKUSZ</option><option>MŰHELY</option><option>TÉR</option><option>CSILLAG</option></select></label>
+          <label for="admin-status">Státusz<select id="admin-status" required><option value="pending">Új igény</option><option value="confirmed">Visszaigazolt</option><option value="completed">Teljesült</option><option value="cancelled">Lemondott</option></select></label>
+          <label for="admin-date">Dátum<input id="admin-date" type="date" required /></label>
+          <label for="admin-time">Kezdés<input id="admin-time" type="time" required /></label>
+          <label for="admin-duration">Időtartam<input id="admin-duration" type="number" min="0.75" step="0.25" required /></label>
+          <label for="admin-participants">Létszám<input id="admin-participants" type="number" min="1" max="50" required /></label>
+          <label for="admin-name">Név<input id="admin-name" type="text" required /></label>
+          <label for="admin-email">E-mail<input id="admin-email" type="email" required /></label>
+          <label for="admin-phone">Telefon<input id="admin-phone" type="tel" required /></label>
+          <label for="admin-total">Összeg (Ft)<input id="admin-total" type="number" min="0" step="100" required /></label>
+        </div>
+        <label for="admin-activity">Foglalkozás típusa<input id="admin-activity" type="text" /></label>
+        <label for="admin-notes">Megjegyzés<textarea id="admin-notes" rows="4"></textarea></label>
+        <p class="admin-form-error" id="admin-booking-error" role="alert"></p>
+        <div class="admin-dialog-actions">
+          <button class="button secondary" id="admin-dialog-cancel" type="button">Mégse</button>
+          <button class="button primary" type="submit">Mentés</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="admin-dialog admin-delete-dialog" id="delete-dialog" aria-labelledby="delete-dialog-title">
+      <div class="admin-delete-content">
+        <p class="admin-eyebrow">Megerősítés</p>
+        <h2 id="delete-dialog-title">Törlöd a foglalást?</h2>
+        <p>A művelet nem vonható vissza.</p>
+        <div class="admin-dialog-actions">
+          <button class="button secondary" id="delete-dialog-cancel" type="button">Mégse</button>
+          <button class="button admin-danger-button" id="delete-dialog-confirm" type="button">Törlés</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="local-preview-admin.js?v=20260720-admin1"></script>
+  </body>
+</html>
